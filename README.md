@@ -15,7 +15,7 @@ To get started, follow these steps:
 - Select "Dev Containers: Attach to Running Container...".
 - Select the appropriate container.
 
-## Progress
+## Lab Assignments
 Track your progress through the labs by checking the boxes below:
 - [ ] Data Lab
 - [ ] Bomb Lab
