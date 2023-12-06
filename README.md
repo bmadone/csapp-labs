@@ -1,6 +1,6 @@
 ## Computer Systems: A Programmer's Perspective – Lab Assignments
 
-![Computer Systems: A Programmer's Perspective third edition](csapp3e.jpeg)
+![Computer Systems: A Programmer's Perspective third edition](cover.jpeg)
 
 
 Welcome to the repository for the book "Computer Systems: A Programmer's Perspective." This repository contains all the necessary instructions to set up your development environment and start working on the labs.
