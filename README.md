@@ -17,6 +17,7 @@ To get started, follow these steps:
 4. Clone ```git pull https://github.com/bmadone/csapp-labs-starter.git``` inside running container
 
 ## Resources
+- [Book](https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X)
 - [Student site](http://csapp.cs.cmu.edu/3e/students.html)
 - [Video Lectures](https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22b96d90ae-9871-4fae-91e2-b1627b43e25e%22)
 
