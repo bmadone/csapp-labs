@@ -11,10 +11,9 @@ To get started, follow these steps:
 ```docker pull xieguochao/csapp```
 2. Run the Docker container using the following command:
 ```docker run -p 7777:7777 -v "$PWD/labs:/home/csapp/project" xieguochao/csapp```
-3. Use docker and create a folder ``csapp`` inside ``/home/csapp/project``, this will be your working area
-4. Use this repo as a template and clone your repo to ﻿``/home/csapp/project`` inside ``csapp`` folder:
-5. Open the browser and navigate to ﻿http://localhost:7777 (password: csapp) to access the environment.
-6. If you prefer to use Visual Studio Code, make sure you have the Docker extension installed. Then, open command center and find "Dev Containers: Attach to Running Container..."
+3. In VSCode select "Dev Containers: Attach to Running Container..." and choose running container
+4. Pull project ```git pull https://github.com/bmadone/csapp-labs-starter.git``` to /csapp
+5. For online access in browser open ﻿http://localhost:7777 (password: csapp)
 
 ## Resources
 - [Student site](http://csapp.cs.cmu.edu/3e/students.html)
