@@ -5,15 +5,16 @@
 
 Welcome to the repository for the book "Computer Systems: A Programmer's Perspective." This repository contains all the necessary instructions to set up your development environment and start working on the labs.
 
+## Prerequisites
+- [Docker](https://www.docker.com) installed and running
+- [VSCode](https://code.visualstudio.com) (Optional)
+
 ## Setup
 To get started, follow these steps:
-1. Download the Docker image by running the following command:
-```docker pull xieguochao/csapp```
-2. Run the Docker container using the following command:
-```docker run -p 7777:7777 -v "$PWD/labs:/home/csapp" xieguochao/csapp```
-3. In VSCode select "Dev Containers: Attach to Running Container..." and choose running container
-4. Pull project ```git pull https://github.com/bmadone/csapp-labs-starter.git``` inside /csapp
-5. For online access in browser open ﻿http://localhost:7777 (password: csapp)
+1. Download Docker image: ```docker pull xieguochao/csapp```
+2. Run Docker container: ```docker run -p 7777:7777 -v "$PWD/labs:/home/csapp" xieguochao/csapp```
+3. For VSCode users select "Dev Containers: Attach to Running Container..." and choose csapp, or if you prefer to work in browser open ﻿http://localhost:7777 (password: ```csapp```)
+4. Clone ```git pull https://github.com/bmadone/csapp-labs-starter.git``` inside running container
 
 ## Resources
 - [Student site](http://csapp.cs.cmu.edu/3e/students.html)
