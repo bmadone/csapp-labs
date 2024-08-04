@@ -12,7 +12,7 @@ To get started, follow these steps:
 2. Run the Docker container using the following command:
 ```docker run -p 7777:7777 -v "$PWD/labs:/home/csapp" xieguochao/csapp```
 3. In VSCode select "Dev Containers: Attach to Running Container..." and choose running container
-4. Pull project ```git pull https://github.com/bmadone/csapp-labs-starter.git``` to /csapp
+4. Pull project ```git pull https://github.com/bmadone/csapp-labs-starter.git``` inside /csapp
 5. For online access in browser open ﻿http://localhost:7777 (password: csapp)
 
 ## Resources
