@@ -1,0 +1,42 @@
+# Lima VM for csapp-labs — x86-64 Ubuntu, no Docker required
+#
+# First-time setup:
+#   brew install lima
+#   limactl start ./lima.yaml
+#
+# Daily use:
+#   limactl shell csapp        # enter Linux shell
+#   limactl stop csapp         # shut down VM when done
+
+vmType: qemu
+arch: x86_64
+
+images:
+  - location: "https://cloud-images.ubuntu.com/releases/22.04/release/ubuntu-22.04-server-cloudimg-amd64.img"
+    arch: x86_64
+
+cpus: 4
+memory: "4GiB"
+disk: "20GiB"
+
+mounts:
+  - location: "~"
+    writable: true
+
+provision:
+  - mode: system
+    script: |
+      #!/bin/bash
+      set -eux
+      apt-get update -y
+      apt-get install -y \
+        gcc \
+        make \
+        gdb \
+        python3 \
+        perl \
+        gcc-multilib \
+        libc6-i386
+      # Disable ASLR persistently (required for attack lab)
+      echo "kernel.randomize_va_space=0" > /etc/sysctl.d/01-disable-aslr.conf
+      sysctl -p /etc/sysctl.d/01-disable-aslr.conf

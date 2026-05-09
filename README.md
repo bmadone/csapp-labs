@@ -3,15 +3,44 @@
 Welcome to the repository for the book "Computer Systems: A Programmer's Perspective." This repository contains all the necessary instructions to set up your development environment and start working on the labs.
 
 ## Prerequisites
-- [Docker](https://www.docker.com) installed and running
-- [VSCode](https://code.visualstudio.com) (Optional)
+- macOS (Apple Silicon or Intel)
+- [Lima](https://lima-vm.io) — lightweight Linux VM, no Docker required:
+  ```bash
+  brew install lima
+  brew install lima-additional-guestagents  # required for x86-64 on Apple Silicon
+  ```
 
 ## Setup
-To get started, follow these steps:
-1. Download Docker image: ```docker pull xieguochao/csapp```
-2. Run Docker container: ```docker run -p 7777:7777 -v "$PWD/labs:/home/csapp" xieguochao/csapp```
-3. For VSCode users select "Dev Containers: Attach to Running Container..." and choose csapp, or if you prefer to work in browser open ﻿http://localhost:7777 (password: ```csapp```)
-4. Clone ```git pull https://github.com/bmadone/csapp-labs-starter.git``` inside running container
+
+**First time only — create and provision the VM:**
+```bash
+limactl start ./csapp.yaml
+```
+This creates an x86-64 Ubuntu 22.04 VM with `gcc`, `gdb`, `make`, `python3`, and `perl` pre-installed. ASLR is disabled persistently inside the VM (required for the Attack Lab).
+
+**Daily use:**
+```bash
+limactl shell csapp     # enter Linux shell
+limactl stop csapp      # shut down VM when done
+```
+
+Your macOS home directory is mounted read-write inside the VM at the same path. Edit files on macOS with any editor; compile and run inside the Lima shell.
+
+## Running the Labs
+
+All commands below are run **inside the Lima shell** (`limactl shell csapp`).
+
+| Lab | Directory | How to test |
+|-----|-----------|-------------|
+| Data | `data/` | `make && ./driver.pl` |
+| Bomb | `bomb/` | `./bomb` (use gdb to defuse) |
+| Attack | `attack/` | `make gdb-ctarget` / `make gdb-rtarget` |
+| Cache | `cache/` | `make && ./driver.py` |
+| Shell | `shell/` | `make && ./sdriver.pl` |
+| Malloc | `malloc/` | `make && ./mdriver` |
+| Proxy | `proxy/` | `make && ./driver.sh` |
+
+**Attack Lab note:** `make run-ctarget` and `make run-rtarget` pass `-q` automatically to skip the CMU grading server. GDB opens with Intel syntax pre-configured via `attack/.gdbinit`.
 
 ## Resources
 - [Book](https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X)
@@ -19,7 +48,6 @@ To get started, follow these steps:
 - [Video Lectures](https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22b96d90ae-9871-4fae-91e2-b1627b43e25e%22)
 
 ## Lab Assignments
-Track your progress through the labs by checking the boxes below:
 - [ ] Data Lab
 - [ ] Bomb Lab
 - [ ] Attack Lab
@@ -27,5 +55,3 @@ Track your progress through the labs by checking the boxes below:
 - [ ] Shell Lab
 - [ ] Malloc Lab
 - [ ] Proxy Lab
-
-Good luck with your programming journey! If you have any questions or issues, feel free to reach out.
