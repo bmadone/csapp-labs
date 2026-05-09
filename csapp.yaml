@@ -28,6 +28,12 @@ mounts:
     writable: true
 
 provision:
+  - mode: user
+    script: |
+      #!/bin/bash
+      set -eux
+      mkdir -p ~/.config/gdb
+      echo 'set auto-load safe-path /' >> ~/.config/gdb/gdbinit
   - mode: system
     script: |
       #!/bin/bash
