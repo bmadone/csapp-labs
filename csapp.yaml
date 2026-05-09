@@ -47,7 +47,8 @@ provision:
         perl \
         gcc-multilib \
         libc6-i386 \
-        python-is-python3
+        python-is-python3 \
+        net-tools
       # Disable ASLR persistently (required for attack lab)
       echo "kernel.randomize_va_space=0" > /etc/sysctl.d/01-disable-aslr.conf
       sysctl -p /etc/sysctl.d/01-disable-aslr.conf
