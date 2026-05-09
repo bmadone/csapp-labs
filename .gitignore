@@ -1,0 +1,34 @@
+# Compiled binaries
+*~
+*.o
+
+# Data Lab
+data/btest
+data/fshow
+data/ishow
+
+# Cache Lab
+cache/csim
+cache/test-trans
+cache/tracegen
+cache/*.tar
+cache/trace.all
+cache/trace.f*
+cache/.csim_results
+cache/.marker
+
+# Shell Lab
+shell/tsh
+shell/myspin
+shell/mysplit
+shell/mystop
+shell/myint
+
+# Malloc Lab
+malloc/mdriver
+
+# Proxy Lab
+proxy/proxy
+proxy/*.tar
+proxy/*.zip
+proxy/*.gz

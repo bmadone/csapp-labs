@@ -1,8 +1,8 @@
 # Lima VM for csapp-labs — x86-64 Ubuntu, no Docker required
 #
 # First-time setup:
-#   brew install lima
-#   limactl start ./lima.yaml
+#   brew install lima && brew install lima-additional-guestagents
+#   limactl start ./csapp.yaml
 #
 # Daily use:
 #   limactl shell csapp        # enter Linux shell
@@ -18,6 +18,10 @@ images:
 cpus: 4
 memory: "4GiB"
 disk: "20GiB"
+
+containerd:
+  system: false
+  user: false
 
 mounts:
   - location: "~"
